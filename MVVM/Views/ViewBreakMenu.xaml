@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BreakMenu.MVVM.Views.ViewBreakMenu"
+             Title="ViewBreakMenu">
+
+    <ContentPage.Resources>
+        <Color x:Key="BreakFastText">#00bfff</Color>
+        <Color x:Key="TypeOfBreakFast">#ff99ff</Color>
+        <Color x:Key="BreakFastIngredient">#LightBlue</Color>
+    </ContentPage.Resources>
+    
+    <Grid
+        RowDefinitions=".10*,AUTO,AUTO,*,.12*" Padding="10,0">
+
+
+        <HorizontalStackLayout 
+            Grid.Row="0"
+            Margin="0,10,0,10">
+            <Label
+                Text="Buber"
+                TextColor="Black"
+                FontSize="30"
+                FontAttributes="Bold"
+                />
+
+            <Label
+                Text=" Breakfast"
+                TextColor="{StaticResource BreakFastText}"
+                FontSize="30"
+                FontAttributes="Bold"
+                />
+        </HorizontalStackLayout>
+
+            
+        <HorizontalStackLayout 
+            Grid.Row="1"
+            >
+            <Label 
+                Text="Your"
+                TextColor="Black"
+                FontSize="Title"
+                FontAttributes="Bold"
+                />
+
+            <Label 
+                Text=" Breakfast"
+                TextColor="{StaticResource BreakFastText}"
+                FontSize="Title"
+                FontAttributes="Bold"/>
+        </HorizontalStackLayout>
+
+        <Label 
+            Grid.Row="2"
+            Margin="0,0,0,10"
+            Text="Breakfasts you have created"/>
+
+
+
+        <Button
+            Grid.Row="4"
+            Margin="5"
+            Text="Create New Breakfast"
+            BackgroundColor="#000000"
+            />
+
+        <CollectionView Grid.Row="3">
+            <CollectionView.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>1</x:String>
+                    <x:String>2</x:String>
+                    <x:String>3</x:String>
+                    <x:String>4</x:String>
+                    <x:String>5</x:String>
+                </x:Array>
+            </CollectionView.ItemsSource>
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout 
+                    ItemSpacing="20"
+                    Orientation="Vertical"/>
+            </CollectionView.ItemsLayout>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame 
+                        HeightRequest="290"
+                        Padding="0">
+                        <Grid 
+                            ColumnDefinitions=".40*,.60*"
+                            Padding="0">
+
+                            <Image
+                                Margin="0"
+                                Grid.Column="0"
+                                Source="image3"
+                                Aspect="AspectFill"
+                                />
+
+
+                            <Grid 
+                                Grid.Column="1"
+                                RowDefinitions="AUTO,AUTO,AUTO">
+                                
+                                <VerticalStackLayout 
+                                    Grid.Row="0"
+                                Margin="15,10,15,0">
+
+                                    <Label
+                                    Text="Vegan Sunshine"
+                                    FontSize="Large"
+                                    FontAttributes="Bold"
+                                    />
+
+                                    <Label
+                                    
+                                    Text="Tomorrow, 08:00 - 11:00 AM"
+                                    />
+
+                                    <Label
+                                    Margin="0,13"
+                                    Text="Vegan everything! Joinus for a healthy breakfast full of vegan dishes and Cookies"/>
+
+                                </VerticalStackLayout>
+                                <FlexLayout
+                                    Grid.Row="1" 
+                                    Margin="15,0"
+                                    Direction="Row" 
+                                    AlignItems="Start" 
+                                    Wrap="Wrap">
+                                    <Frame Padding="5" BackgroundColor="LightBlue" Margin="0,2,4,2">
+                                        <Label Text="Cookie" FontSize="Micro" TextColor="Black"/>
+                                    </Frame>
+
+                                    <Frame Padding="5" BackgroundColor="LightBlue" Margin="0,2,4,2">
+                                        <Label Text="Avocado Toast" FontSize="Micro" TextColor="Black"/>
+                                    </Frame>
+
+                                    <Frame Padding="5" BackgroundColor="LightBlue" Margin="0,2,4,2">
+                                        <Label Text="Omlet" FontSize="Micro" TextColor="Black"/>
+                                    </Frame>
+
+                                    <Frame Padding="5" BackgroundColor="LightBlue" Margin="0,2,4,2">
+                                        <Label Text="Salad" FontSize="Micro" TextColor="Black"/>
+                                    </Frame>
+                                </FlexLayout>
+                                <FlexLayout
+                                    Grid.Row="2" 
+                                    Margin="15,0"
+                                    Direction="Row" 
+                                    AlignItems="Start" 
+                                    Wrap="Wrap">
+                                    <Frame Padding="5" BackgroundColor="{StaticResource TypeOfBreakFast}" Margin="0,2,4,2">
+                                        <Label Text="Cookie" FontSize="Micro" TextColor="Black"/>
+                                    </Frame>
+
+                                    <Frame Padding="5" BackgroundColor="{StaticResource TypeOfBreakFast}" Margin="0,2,4,2">
+                                        <Label Text="Avocado Toast" FontSize="Micro" TextColor="Black"/>
+                                    </Frame>
+
+                                    <Frame Padding="5" BackgroundColor="{StaticResource TypeOfBreakFast}" Margin="0,2,4,2">
+                                        <Label Text="Omlet" FontSize="Micro" TextColor="Black"/>
+                                    </Frame>
+
+                                    <Frame Padding="5" BackgroundColor="{StaticResource TypeOfBreakFast}" Margin="0,2,4,2">
+                                        <Label Text="Salad" FontSize="Micro" TextColor="Black"/>
+                                    </Frame>
+                                </FlexLayout>
+
+                            </Grid>
+                            
+                            
+                        </Grid>
+                        
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+            
+        </CollectionView>
+
+
+
+
+
+
+    </Grid>
+    
+    
+</ContentPage>
